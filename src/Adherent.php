@@ -19,7 +19,8 @@ final class Adherent
 
     public function normaliser(string $nom, string $prenom, string $datenaissance)
     {
-        $this->identifiantNormalise = "";
+        $concat = $nom . " " . $prenom . " " . $datenaissance;
+        $this->identifiantNormalise = strtolower($concat);
     }
 
     public function getIdentifiantNormalise(): string
