@@ -19,6 +19,9 @@ final class Adherent
 
     public function normaliser(string $nom, string $prenom, string $datenaissance)
     {
+        if (strpos($prenom, '-') !== false) {
+            $prenom = str_replace('-', ' ', $prenom);
+        }
         $concat = $nom . " " . $prenom . " " . $datenaissance;
         $this->identifiantNormalise = strtolower($concat);
     }
