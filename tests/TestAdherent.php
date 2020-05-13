@@ -13,4 +13,9 @@ final class TestAdherent extends TestCase
             new Adherent("Bouvier", "Nathan", "26/12/1998")
         );
     }
+    public function testNormalisation(): void
+    {
+        $adh = new Adherent("BOUVIER", "Nathan", "26/12/1998");
+        $this->assertEquals("bouvier nathan 26/12/1998", $adh->getIdentifiantNormalise(),);
+    }
 }
